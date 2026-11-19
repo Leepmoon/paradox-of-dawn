@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+<title>웹툰 보기</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body { background: #111; }
+.webtoon {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+.webtoon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</style>
+</head>
+<body>
+<main class="webtoon" id="webtoon"></main>
+
+<script>
+const viewer = document.getElementById("webtoon");
+
+for (let i = 1; i <= 14; i++) {
+  const img = document.createElement("img");
+  img.src = i + ".png";
+  img.alt = "웹툰 " + i;
+  img.loading = i <= 2 ? "eager" : "lazy";
+  viewer.appendChild(img);
+}
+</script>
+</body>
+</html>
+  
